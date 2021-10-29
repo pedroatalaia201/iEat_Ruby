@@ -1,0 +1,11 @@
+<h1>Home IEat</h1>
+<p>Hello <%= @email%></p>
+
+<% if user_signed_in? %>
+    <% if current_user.restaurant? %>
+        <%= render 'restaurant' %> 
+        <!-- Com o metódo render, vai ser procurado na mesma pasta pelo arquivo que comece com "_" ew seguido pelo dado como parâmetro -->
+    <% elsif current_user.costumer? %>
+        <%= render 'costumer' %>
+    <% end %>
+<% end %>

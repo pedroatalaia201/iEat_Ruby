@@ -1,0 +1,20 @@
+<%= form_for(@product, local: true) do |form|%>
+    <div class= "field">
+        <%= form.text_field :name %>
+        <%= form.label :name %>
+    </div>
+
+    <div class= "field">
+        <%= form.text_field :value %>
+        <%= form.label :value %>
+    </div>
+
+    <div class= "field">
+        <%= form.collection_select(:restaurant_id, Restaurant.order(:name), :id, :name, include_blank: true) %>
+        <%= form.label :restaurant %>
+    </div>
+
+    <div class= "actions">
+        <%= form.submit %>
+    </div>
+<% end %>
